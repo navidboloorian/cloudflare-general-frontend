@@ -1,0 +1,11 @@
+#list {
+    width: 100%;
+    background-color: #777;
+    padding-top: 5px;
+}
+
+#list h2 {
+    margin: 0px;
+    color: white;
+    font-size: 13px;
+}

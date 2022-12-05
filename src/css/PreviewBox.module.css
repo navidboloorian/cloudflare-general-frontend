@@ -1,0 +1,14 @@
+.box {
+    width: 500px;
+    position: relative;
+    border-radius: 5px;
+    overflow: auto;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+    z-index: 1;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
