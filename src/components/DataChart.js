@@ -1,3 +1,7 @@
+/**
+ * Stores chart component used for rendering graphs.
+ */
+
 import {
     Chart,
     CategoryScale,
@@ -11,6 +15,7 @@ import {
 import { Line } from 'react-chartjs-2';
 import styles from "../css/DataChart.module.css";
 
+// declaring chart attributes that will be used
 Chart.register(
     CategoryScale,
     LinearScale,
@@ -24,7 +29,16 @@ Chart.register(
 Chart.defaults.color = "white";
 Chart.defaults.borderColor = "white";
 
+/**
+ * Component that renders chart based on passed-in information.
+ * 
+ * @param dataObj is the data to be represented
+ * @param chartSpecs are the styles/labels of teh chart 
+ * @returns Graph if dataObj info is defined, fragment otherwise
+ */
 export const DataChart = ({dataObj, chartSpecs}) => {
+
+    // ensure that data exists and is not undefined
     if(dataObj.data) {
         const options = {
             color: "white",

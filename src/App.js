@@ -1,3 +1,7 @@
+/**
+ * Main page of website. Contains a grid showing the information retrieved from the API.
+ */
+
 import { useEffect, useState } from 'react';
 import './App.css';
 import { DomainList } from "./components/DomainList";
@@ -14,6 +18,7 @@ function App() {
   const [isLightBoxVisible, setIsLightBoxVisible] = useState(false);
   const [lightBoxComponent, setLightBoxComponent] = useState(null);
 
+  // set the state variables based on API info
   useEffect(() => {
     const fetchPopularDomains = async () => {
       const res = await fetch(`${backendURL}/popular-domains`, {
@@ -55,6 +60,8 @@ function App() {
 
   let trafficChartSpecs, attackLayerChartSpecs;
 
+  // ensure that data is defined
+  // set the styles and labels of the traffic change chart
   if(trafficChange.data) {
     trafficChartSpecs = {
       title: "Traffic Change Over the Last 30 Days: Total vs HTTP",
@@ -76,6 +83,8 @@ function App() {
     };
   }
 
+  // ensure that data is defined
+  // set the styles and labels of attacklayer3 chart
   if(attackLayer3.data) {
     attackLayerChartSpecs = {
       title: " Layer 3 DDoS Attacks Over the Last 30 Days",
@@ -91,11 +100,13 @@ function App() {
     };
   }
 
+  // makes the lightbox visible and displays the component that is passed in as an argument
   const showLightBox = (component) => {
     setLightBoxComponent(component);
     setIsLightBoxVisible(true);
   }
 
+  // hides the lightbox
   const hideLightBox = () => {
     setLightBoxComponent(null);
     setIsLightBoxVisible(false);

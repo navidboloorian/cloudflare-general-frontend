@@ -1,5 +1,15 @@
+/**
+ * Stores DomainListItem component which renders a single row for the table.
+ */
+
 import styles from "../css/DomainListItem.module.css";
 
+/**
+ * Component that displays an individual row of the DomainList table.
+ * 
+ * @param site is a JSON object representing the site information
+ * @returns div that stores all of the row info
+ */
 export const DomainListItem = ({site}) => {
     const {rank, rankChange, domain, category} = site;
 
