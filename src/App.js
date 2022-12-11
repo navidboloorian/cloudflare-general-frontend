@@ -87,10 +87,10 @@ function App() {
   // set the styles and labels of attacklayer3 chart
   if(attackLayer3.data) {
     attackLayerChartSpecs = {
-      title: " Layer 3 DDoS Attacks Over the Last 30 Days",
+      title: "Volume of Layer 3 DDoS Attacks Over the Last 30 Days",
       datasets: [
         {
-            label: "Layer 3 DDoS Attacks",
+            label: "Layer 3 DDoS Attack Volume",
             data: attackLayer3.data.value,
             borderColor: 'green',
             backgroundColor: 'green',
